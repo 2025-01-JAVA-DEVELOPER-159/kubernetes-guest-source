@@ -1,0 +1,50 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	/*swagger*/
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	/**Oracle**/
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+	/**MYSQL***/
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.yaml:snakeyaml:1.33'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.awaitility:awaitility:3.1.2'
+	// java-faker
+	implementation ('com.github.javafaker:javafaker:1.0.2') { exclude module: 'snakeyaml' }
+	implementation group: 'org.yaml', name: 'snakeyaml', version: '2.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+bootJar{
+	archiveFileName = 'guest.jar'
+}
