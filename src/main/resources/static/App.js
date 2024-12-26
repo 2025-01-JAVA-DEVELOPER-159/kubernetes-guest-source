@@ -91,7 +91,7 @@ const App = function () {
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<p align="center">Copyright (&copy;) By Kimkyoungho.[김경수] All
+			<p align="center">Copyright (&copy;) By Kimkyoungho.[김경미] All
 				rights reserved.</p>
 			<!-- include_common_bottom.jsp end-->
 		</div>`;
