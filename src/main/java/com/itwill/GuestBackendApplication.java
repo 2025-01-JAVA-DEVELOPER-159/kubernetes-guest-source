@@ -22,41 +22,17 @@ public class GuestBackendApplication  implements CommandLineRunner{
 	private GuestService guestService;
 	@Override
 	public void run(String... args) throws Exception {
+		for(int i=0;i<5;i++){
 		guestService.guestWrite(GuestDto.builder()
-						.guestName("guest1")
-						.guestEmail("guest@gmail.com")
-						.guestHomepage("http://www.google.co.kr")
-						.guestTitle("제목1")
-						.guestContent("내용1")
+						.guestName("guest"+i)
+						.guestEmail("guest"+i+"@gmail.com")
+						.guestHomepage("http://www.google"+i+".co.kr")
+						.guestTitle("제목"+i)
+						.guestContent("내용"+i)
 						.build());
-		guestService.guestWrite(GuestDto.builder()
-						.guestName("guest2")
-						.guestEmail("guest@gmail.com")
-						.guestHomepage("http://www.google.co.kr")
-						.guestTitle("제목2")
-						.guestContent("내용2")
-						.build());
-		guestService.guestWrite(GuestDto.builder()
-						.guestName("guest3")
-						.guestEmail("guest@gmail.com")
-						.guestHomepage("http://www.google.co.kr")
-						.guestTitle("제목3")
-						.guestContent("내용3")
-						.build());
-		guestService.guestWrite(GuestDto.builder()
-						.guestName("guest4")
-						.guestEmail("guest@gmail.com")
-						.guestHomepage("http://www.google.co.kr")
-						.guestTitle("제목4")
-						.guestContent("내용4")
-						.build());
-		guestService.guestWrite(GuestDto.builder()
-						.guestName("guest5")
-						.guestEmail("guest5@gmail.com")
-						.guestHomepage("http://www.google.co.kr")
-						.guestTitle("제목5")
-						.guestContent("내용5")
-						.build());
+		}	
+
+		
 	
 	}
 }
