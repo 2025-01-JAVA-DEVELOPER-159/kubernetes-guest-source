@@ -22,7 +22,7 @@ public class GuestBackendApplication  implements CommandLineRunner{
 	private GuestService guestService;
 	@Override
 	public void run(String... args) throws Exception {
-		for(int i=0;i<3;i++){
+		for(int i=0;i<20;i++){
 		guestService.guestWrite(GuestDto.builder()
 						.guestName("guest"+i)
 						.guestEmail("guest"+i+"@gmail.com")
